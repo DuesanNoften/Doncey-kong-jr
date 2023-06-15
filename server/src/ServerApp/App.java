@@ -14,10 +14,8 @@ import Game.*;
 /**
 * Clase Singleton para controlar y crear la interfaz del servidor
 */
-public class App extends Canvas implements ActionListener
-{
+public class App extends Canvas implements ActionListener {
 
-    
     // JTextField
     private static App singleApp;
 
@@ -45,8 +43,7 @@ public class App extends Canvas implements ActionListener
     /**
     * Clase constructora de App
     */
-    App()
-    {
+    App() {
         juego1 = new Juego();
         juego2 = new Juego();
         f = new Font("Impact", Font.PLAIN, 16);
@@ -54,10 +51,8 @@ public class App extends Canvas implements ActionListener
     /**
     * Clase para obtener la instancia de App
     */
-    public static App getInstance()
-    {
-        if(singleApp == null)
-        {
+    public static App getInstance() {
+        if(singleApp == null) {
             singleApp = new App();
         }
         return singleApp;
@@ -65,8 +60,7 @@ public class App extends Canvas implements ActionListener
     /**
     * Main para crear la interfaz gráfica
     */
-    public static void main(String[] args) throws MalformedURLException, IOException
-    {  
+    public static void main(String[] args) throws MalformedURLException, IOException {
        
         App app = App.getInstance();
         ImageIcon icon = new ImageIcon("img/ico.png");
@@ -135,8 +129,7 @@ public class App extends Canvas implements ActionListener
         
         
         //JPanel panelJ1 = new JPanel();
-        ImagePanel panelJ1 = new ImagePanel(
-            new ImageIcon("img/fondo.jpg").getImage());
+        ImagePanel panelJ1 = new ImagePanel(new ImageIcon("img/fondo.jpg").getImage());
         panelJ1.setPreferredSize(new Dimension(1000, 350));
         panelJ1.setBorder(BorderFactory.createEmptyBorder(40,40,40,40));
         panelJ1.add(optJ1);
@@ -146,8 +139,7 @@ public class App extends Canvas implements ActionListener
         panelJ1.add(sliderJ1);
         panelJ1.add(buttonJ1);
 
-        ImagePanel panelJ2 = new ImagePanel(
-            new ImageIcon("img/fondo2.jpg").getImage());
+        ImagePanel panelJ2 = new ImagePanel(new ImageIcon("img/fondo2.jpg").getImage());
         panelJ2.setPreferredSize(new Dimension(1000, 350));
         panelJ2.setBorder(BorderFactory.createEmptyBorder(40,40,40,40));
         panelJ2.add(optJ2);
@@ -157,10 +149,6 @@ public class App extends Canvas implements ActionListener
         panelJ2.add(sliderJ2);
         panelJ2.add(buttonJ2);
 
-        
-        
-        
-        
         frame.add(panelJ1, BorderLayout.NORTH);
         frame.add(panelJ2, BorderLayout.CENTER);
         frame.setPreferredSize(new Dimension(1000, 700));
@@ -180,8 +168,7 @@ public class App extends Canvas implements ActionListener
     * @param spinner
     * @param width ancho del spinner
     */
-    public static void setSpinnerProperties(JSpinner spinner, Integer width)
-    {
+    public static void setSpinnerProperties(JSpinner spinner, Integer width) {
         spinner.setFont(f);
         ((JSpinner.DefaultEditor)spinner.getEditor()).getTextField().setColumns(width);
         ((JSpinner.DefaultEditor)spinner.getEditor()).getTextField().setEditable(false);;
@@ -195,24 +182,21 @@ public class App extends Canvas implements ActionListener
     * @param e evento
     */
     @Override
-    public void actionPerformed(ActionEvent e) 
-    {
+    public void actionPerformed(ActionEvent e) {
         Integer x_liana = 0;
         Integer y_percentage = 0;
         String opcion = "";
         String objeto = "";
         String s = e.getActionCommand();
         Juego juego = new Juego();
-        if (s.equals("Enviar a J1")) 
-        {
+        if (s.equals("Enviar a J1")) {
             x_liana = (Integer)liaJ1.getValue();
             y_percentage = sliderJ1.getValue();
             opcion = (String)optJ1.getValue();
             objeto = (String)objJ1.getValue();
             juego = juego1;
         }
-        if (s.equals("Enviar a J2")) 
-        {
+        if (s.equals("Enviar a J2")) {
             x_liana = (Integer)liaJ2.getValue();
             y_percentage = sliderJ2.getValue();
             opcion = (String)optJ2.getValue();
@@ -220,43 +204,35 @@ public class App extends Canvas implements ActionListener
             juego = juego2;
         }
             
-            if (opcion.equals("Crear"))
-            {
-                if(objeto.equals("enemigo rojo"))
-                {
+            if (opcion.equals("Crear")) {
+                if(objeto.equals("enemigo rojo")) {
                     System.out.println("creando enemigo rojo");
                     juego.crear_cocodrilo("1", x_liana, y_percentage);
                     
 
                 }
-                if(objeto.equals("enemigo azul"))
-                {
+                if(objeto.equals("enemigo azul")) {
                     System.out.println("creando enemigo azul");
                     juego.crear_cocodrilo("2", x_liana, y_percentage);
                     
                 }
-                if(objeto.equals("fruta"))
-                {
+                if(objeto.equals("fruta")) {
                     System.out.println("creando fruta");
                     juego.crear_fruta(x_liana, y_percentage);
                     
                 }
             }
-            if (opcion.equals("Eliminar"))
-            {
-                if(objeto.equals("enemigo rojo"))
-                {
+            if (opcion.equals("Eliminar")) {
+                if(objeto.equals("enemigo rojo")) {
                     System.out.println("eliminando enemigo rojo");
                     juego.eliminar_cocodrilo("1", x_liana);
 
                 }
-                if(objeto.equals("enemigo azul"))
-                {
+                if(objeto.equals("enemigo azul")) {
                     System.out.println("eliminando enemigo azul");
                     juego.eliminar_cocodrilo("2", x_liana);
                 }
-                if(objeto.equals("fruta"))
-                {
+                if(objeto.equals("fruta")) {
                     juego.eliminar_fruta(x_liana, y_percentage);
                 }
             }
@@ -274,27 +250,23 @@ public class App extends Canvas implements ActionListener
     
 }
 
-class ImagePanel extends JPanel
-{
-private static final long serialVersionUID = 1L;
-private Image image = null;
-private int iWidth2;
-private int iHeight2;
+class ImagePanel extends JPanel {
+    private static final long serialVersionUID = 1L;
+    private Image image = null;
+    private int iWidth2;
+    private int iHeight2;
 
-public ImagePanel(Image image)
-{
-    this.image = image;
-    this.iWidth2 = image.getWidth(this)/2;
-    this.iHeight2 = image.getHeight(this)/2;
-}
-
-
-public void paintComponent(Graphics g)
-{
-    super.paintComponent(g);
-    if (image != null)
-    {
-        g.drawImage(image, 0, 0, null);
+    public ImagePanel(Image image) {
+        this.image = image;
+        this.iWidth2 = image.getWidth(this)/2;
+        this.iHeight2 = image.getHeight(this)/2;
     }
-}
+
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (image != null) {
+            g.drawImage(image, 0, 0, null);
+        }
+    }
 }

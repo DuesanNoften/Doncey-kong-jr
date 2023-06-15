@@ -17,7 +17,7 @@ public class ServerHandler extends Thread {
      /**
     * Constructor de ServerHandler
     * @param port puerto del cliente
-    * @param niJuego juego del cliente
+    * @param miJuego juego del cliente
     */
     public ServerHandler(Integer port, Juego miJuego) {
         this.port = port;
