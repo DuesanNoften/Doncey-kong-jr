@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Doncey-kong-jr.iml" filepath="$PROJECT_DIR$/.idea/Doncey-kong-jr.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Java-Server/Java-Server.iml" filepath="$PROJECT_DIR$/Java-Server/Java-Server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Java-Server/lib/lib.iml" filepath="$PROJECT_DIR$/Java-Server/lib/lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DonCEy-Kong-Jr-main.iml" filepath="$PROJECT_DIR$/DonCEy-Kong-Jr-main.iml" />
     </modules>
   </component>
 </project>
