@@ -49,8 +49,8 @@ public class Jugador
     }
     /**
 	* Función para detectar una colision entre el jugador y una objeto
-	* @param player_x posicion en x del objeto
-	* @param player_y posicion en y del objeto
+	* @param object_x posicion en x del objeto
+	* @param object_y posicion en y del objeto
 	* @return true si detecta una colision, false de lo contrario
 	*/
     public Boolean colision(Integer object_x, Integer object_y)

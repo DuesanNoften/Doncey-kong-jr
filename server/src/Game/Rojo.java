@@ -23,6 +23,7 @@ public class Rojo extends Cocodrilo {
     /*
     * Función para mover a un enemigo rojo a lo largo de la liana
     */
+    @Override
     public void move()
     {
         if(y<=(liana[1] + 20))

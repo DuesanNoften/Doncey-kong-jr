@@ -1,5 +1,5 @@
 package Game;
-
+import DataStructures.DoublyLinkedList;
 import java.util.LinkedList;
 import java.lang.Integer;
 
@@ -11,9 +11,9 @@ public class Juego
     public Jugador jugador;
     Integer puntos;
     Integer vel;
-    LinkedList<Cocodrilo> cocodrilos;
-    LinkedList<Fruta> frutas;
-    LinkedList<Liana> lianas ;
+    DoublyLinkedList<Cocodrilo> cocodrilos;
+    DoublyLinkedList<Fruta> frutas;
+    DoublyLinkedList<Liana> lianas ;
     /**
 	* Constructor de juego
 	*/
@@ -22,9 +22,9 @@ public class Juego
         puntos = 0;
         vel = 5;
         jugador = new Jugador();
-        lianas =  new LinkedList<Liana>();
-        cocodrilos =  new LinkedList<Cocodrilo>();
-        frutas =  new LinkedList<Fruta>();
+        lianas =  new DoublyLinkedList<>();
+        cocodrilos =  new DoublyLinkedList<>();
+        frutas =  new DoublyLinkedList<>();
         crear_lianas();
     }
     /**
@@ -163,7 +163,7 @@ public class Juego
            
             if(newID.equals(posicion))
             {
-                cocodrilos.remove(i);
+                cocodrilos.removeAt(i);
                 System.out.println("coco eliminado");
                 break;
             }
@@ -191,7 +191,7 @@ public class Juego
             
             if(id.equals(posicion))
             {
-                frutas.remove(i);
+                frutas.removeAt(i);
                 System.out.println("fruta eliminado");
                 break;
             }
@@ -311,7 +311,7 @@ public class Juego
                     puntos = puntos + frutas.get(i).getPuntos();
                     String pos = frutas.get(i).getPosicion() + ":";
                     finalStr = finalStr + pos;
-                    frutas.remove(i);
+                    frutas.removeAt(i);
 
                 }
                 else
@@ -364,7 +364,7 @@ public class Juego
                     String pos = cocodrilos.get(i).getPosicion() + ":";
                     finalStr = finalStr + pos;
                     cocodrilos.get(i).move();
-                    cocodrilos.remove(i);
+                    cocodrilos.removeAt(i);
                 }
                 else
                 {

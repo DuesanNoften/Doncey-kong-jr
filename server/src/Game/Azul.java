@@ -22,6 +22,7 @@ public class Azul extends Cocodrilo
     /*
     * Función para mover a un enemigo azul a lo largo de la liana
     */
+    @Override
     public void move()
     {
         this.y = this.y + velocidad;

@@ -68,11 +68,11 @@ public class App extends Canvas implements ActionListener {
         frame.setIconImage(icon.getImage());
         JLabel label = new JLabel("en liana");
         label.setFont(f);
-        label.setForeground(new Color(179,207,221));
+        label.setForeground(new Color(0, 0, 0));
 
         JLabel label2 = new JLabel("en liana");
         label2.setFont(f);
-        label2.setForeground(new Color(179,207,221));
+        label2.setForeground(new Color(0, 0, 0));
 
         buttonJ1 = new JButton("Enviar a J1");
         buttonJ1.setBackground(new Color(179,207,221));
@@ -84,8 +84,6 @@ public class App extends Canvas implements ActionListener {
 
         buttonJ1.addActionListener(app);
         buttonJ2.addActionListener(app);
-
-        
 
         sliderJ1 = new JSlider(JSlider.VERTICAL);
         sliderJ1.setBackground(Color.BLACK);
@@ -106,8 +104,7 @@ public class App extends Canvas implements ActionListener {
         sliderJ2.setInverted(true);
         sliderJ2.setLabelTable(sliderJ2.createStandardLabels(10));
         sliderJ2.setFont(f);
-        
-        
+
         objJ1 = new JSpinner(new SpinnerListModel (gameObj));
         setSpinnerProperties(objJ1, 8);
 
@@ -126,8 +123,6 @@ public class App extends Canvas implements ActionListener {
         liaJ2 = new JSpinner(new SpinnerNumberModel(1, 1, 10, 1));
         setSpinnerProperties(liaJ2, 3);
 
-        
-        
         //JPanel panelJ1 = new JPanel();
         ImagePanel panelJ1 = new ImagePanel(new ImageIcon("img/fondo.jpg").getImage());
         panelJ1.setPreferredSize(new Dimension(1000, 350));
@@ -161,8 +156,8 @@ public class App extends Canvas implements ActionListener {
         server1.start();
         server2.start();
 
-
     }
+
     /**
     * Funcion para configurar las propiedades de un spinner
     * @param spinner
@@ -242,12 +237,7 @@ public class App extends Canvas implements ActionListener {
         System.out.println("juego2: ");
         System.out.println(juego2.game_str());
 
-        
-        
     }
-   
-      
-    
 }
 
 class ImagePanel extends JPanel {

@@ -2,7 +2,7 @@ package Game;
 /*
 * Clase padre Cocodrilo para crear enemigos a partir de las clases hijas Azul y Rojo
 */
-public class Cocodrilo 
+public abstract class Cocodrilo
 {
     static protected Integer velocidad;
     protected Integer[] liana;
