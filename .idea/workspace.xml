@@ -10,10 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd2b2c15-a02e-4d56-9fef-873bf6b9d3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +37,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Doncey-kong-jr/Doncey-kong-jr/server"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/yangr/Desktop/Git Hub/Doncey-kong-jr/server",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JAR Application.server.jar">
+  <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ServerApp.App" />
       <module name="DonCEy-Kong-Jr-main" />
@@ -82,6 +81,7 @@
       <workItem from="1686824005729" duration="78000" />
       <workItem from="1686824107694" duration="49000" />
       <workItem from="1687154384763" duration="59000" />
+      <workItem from="1687161365487" duration="47000" />
     </task>
     <servers />
   </component>
