@@ -1,10 +1,13 @@
 package ServerApp;
 
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.awt.*;
 import java.awt.BorderLayout;
 import java.io.*;
+import javax.imageio.ImageIO;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import Game.*;
@@ -32,8 +35,8 @@ public class App extends Canvas implements ActionListener {
     static JSpinner objJ2, optJ2, liaJ2;
     static JLabel labelJ1;
     static JLabel labelJ2;
-    static Game juego1;
-    static Game juego2;
+    static Juego juego1;
+    static Juego juego2;
 
     static ServerHandler server1;
     static ServerHandler server2;
@@ -41,8 +44,8 @@ public class App extends Canvas implements ActionListener {
     * Clase constructora de App
     */
     App() {
-        juego1 = new Game();
-        juego2 = new Game();
+        juego1 = new Juego();
+        juego2 = new Juego();
         f = new Font("Impact", Font.PLAIN, 16);
     }
     /**
@@ -60,7 +63,7 @@ public class App extends Canvas implements ActionListener {
     public static void main(String[] args) throws MalformedURLException, IOException {
        
         App app = App.getInstance();
-        ImageIcon icon = new ImageIcon("src/img/ico.png");
+        ImageIcon icon = new ImageIcon("img/ico.png");
         frame = new JFrame("DonCEy Kong Jr. Server");
         frame.setIconImage(icon.getImage());
         JLabel label = new JLabel("en liana");
@@ -121,7 +124,7 @@ public class App extends Canvas implements ActionListener {
         setSpinnerProperties(liaJ2, 3);
 
         //JPanel panelJ1 = new JPanel();
-        ImagePanel panelJ1 = new ImagePanel(new ImageIcon("src/img/fondo.jpg").getImage());
+        ImagePanel panelJ1 = new ImagePanel(new ImageIcon("img/fondo.jpg").getImage());
         panelJ1.setPreferredSize(new Dimension(1000, 350));
         panelJ1.setBorder(BorderFactory.createEmptyBorder(40,40,40,40));
         panelJ1.add(optJ1);
@@ -131,8 +134,8 @@ public class App extends Canvas implements ActionListener {
         panelJ1.add(sliderJ1);
         panelJ1.add(buttonJ1);
 
-        ImagePanel panelJ2 = new ImagePanel(new ImageIcon("src/img/fondo2.jpg").getImage());
-        panelJ2.setPreferredSize(new Dimension(1000, 750));
+        ImagePanel panelJ2 = new ImagePanel(new ImageIcon("img/fondo2.jpg").getImage());
+        panelJ2.setPreferredSize(new Dimension(1000, 350));
         panelJ2.setBorder(BorderFactory.createEmptyBorder(40,40,40,40));
         panelJ2.add(optJ2);
         panelJ2.add(objJ2);
@@ -143,7 +146,7 @@ public class App extends Canvas implements ActionListener {
 
         frame.add(panelJ1, BorderLayout.NORTH);
         frame.add(panelJ2, BorderLayout.CENTER);
-        frame.setPreferredSize(new Dimension(1000, 750));
+        frame.setPreferredSize(new Dimension(1000, 700));
         frame.pack();
         frame.setVisible(true);
 
@@ -180,7 +183,7 @@ public class App extends Canvas implements ActionListener {
         String opcion = "";
         String objeto = "";
         String s = e.getActionCommand();
-        Game juego = new Game();
+        Juego juego = new Juego();
         if (s.equals("Enviar a J1")) {
             x_liana = (Integer)liaJ1.getValue();
             y_percentage = sliderJ1.getValue();
@@ -199,33 +202,33 @@ public class App extends Canvas implements ActionListener {
             if (opcion.equals("Crear")) {
                 if(objeto.equals("enemigo rojo")) {
                     System.out.println("creando enemigo rojo");
-                    juego.generate_Kremlin("1", x_liana, y_percentage);
+                    juego.crear_cocodrilo("1", x_liana, y_percentage);
                     
 
                 }
                 if(objeto.equals("enemigo azul")) {
                     System.out.println("creando enemigo azul");
-                    juego.generate_Kremlin("2", x_liana, y_percentage);
+                    juego.crear_cocodrilo("2", x_liana, y_percentage);
                     
                 }
                 if(objeto.equals("fruta")) {
                     System.out.println("creando fruta");
-                    juego.generate_fruit(x_liana, y_percentage);
+                    juego.crear_fruta(x_liana, y_percentage);
                     
                 }
             }
             if (opcion.equals("Eliminar")) {
                 if(objeto.equals("enemigo rojo")) {
                     System.out.println("eliminando enemigo rojo");
-                    juego.eliminate_Kremlin("1", x_liana);
+                    juego.eliminar_cocodrilo("1", x_liana);
 
                 }
                 if(objeto.equals("enemigo azul")) {
                     System.out.println("eliminando enemigo azul");
-                    juego.eliminate_Kremlin("2", x_liana);
+                    juego.eliminar_cocodrilo("2", x_liana);
                 }
                 if(objeto.equals("fruta")) {
-                    juego.eliminate_fruit(x_liana, y_percentage);
+                    juego.eliminar_fruta(x_liana, y_percentage);
                 }
             }
         
@@ -235,7 +238,6 @@ public class App extends Canvas implements ActionListener {
         System.out.println(juego2.game_str());
 
     }
-
 }
 
 class ImagePanel extends JPanel {
