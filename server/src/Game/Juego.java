@@ -1,6 +1,5 @@
 package Game;
 import DataStructures.DoublyLinkedList;
-import java.util.LinkedList;
 import java.lang.Integer;
 
 /**
@@ -27,6 +26,7 @@ public class Juego
         frutas =  new DoublyLinkedList<>();
         crear_lianas();
     }
+
     /**
 	* Función para mover al jugador (W hacia arriba, S hacia abajo, A hacia la izquierda y D hacia la derecha)
 	* @param command dircción de movimiento
@@ -39,8 +39,7 @@ public class Juego
             if(jugador.y >= liana_actual.getPosicion()[1])
             {
                 jugador.move_up();
-            }           
-
+            }
         }
         else if(command == "s")//down
         {
@@ -48,7 +47,6 @@ public class Juego
             {
                 jugador.move_down();
             }
-            
         }
         else if(command == "a")//left
         {
@@ -58,24 +56,19 @@ public class Juego
                                         || (jugador.getY()<=145))
             {
                 jugador.move_sideways(temp.getPosicion()[0], temp.getId());
-
             }
-
-            
         }
         else if(command == "d")//right
         {
             Liana temp = getLiana(jugador.liana+1);
             if((liana_actual.getId()<10) && (jugador.getY()>= temp.getPosicion()[1]) 
                                          && (jugador.getY()< temp.getPosicion()[2]))
-                                         
             {
                 jugador.move_sideways(temp.getPosicion()[0], temp.getId());
-
             }
-            
         }
     }
+
     /**
 	* Funcion para crear una fruta
 	* @param liana numero de liana al que se quiere crear
@@ -91,6 +84,7 @@ public class Juego
         Fruta fruta = new Fruta(temp.getPosicion()[0],pos_y);
         frutas.add(fruta);
     }
+
      /**
 	* Funcion para crear un enemigo
     * @param tipo 1 si es enemigo rojo y 2 si es azul
@@ -110,6 +104,7 @@ public class Juego
             System.out.println("Creando cocodrilo azul");
         }
     }
+
      /**
 	* Funcion para crear un enemigo rojo
 	* @param liana numero de liana al que se quiere crear
@@ -126,9 +121,8 @@ public class Juego
         Rojo rojo = new Rojo(temp.getPosicion()[0],pos_y,temp.getPosicion());
         rojo.setVelocidad(vel);
         cocodrilos.add(rojo);
-
-       
     }
+
     /**
 	* Funcion para crear un enemigo azul
 	* @param liana numero de liana al que se quiere crear
@@ -146,6 +140,7 @@ public class Juego
         azul.setVelocidad(vel);
         cocodrilos.add(azul);
     }
+
     /**
 	* Funcion para eliminar un enemigo
     * @param tipo 1 si es enemigo rojo y 2 si es azul
@@ -153,24 +148,21 @@ public class Juego
 	*/
     public void eliminar_cocodrilo(String tipo, Integer liana)
     {
-        
         Liana temp= getLiana(liana);
         String posicion = tipo + "," + temp.getPosicion()[0];
-        for(int i = 0; i< cocodrilos.size();i++)
+        for(Integer i = 0; i< cocodrilos.size();i++)
         {
             String id = cocodrilos.get(i).getPosicion();
             String newID = id.split(",")[0] + "," + id.split(",")[1];
-           
             if(newID.equals(posicion))
             {
                 cocodrilos.removeAt(i);
                 System.out.println("coco eliminado");
                 break;
             }
-            
         }
-
     }
+
     /**
 	* Funcion para eliminar una fruta
 	* @param liana numero de liana al que se quiere crear
@@ -178,7 +170,6 @@ public class Juego
 	*/
     public void eliminar_fruta(Integer liana, Integer y)
     {
-        
         Liana temp= getLiana(liana);
         Integer y_inicial = temp.getPosicion()[1];
         Integer y_final = temp.getPosicion()[2];
@@ -195,10 +186,9 @@ public class Juego
                 System.out.println("fruta eliminado");
                 break;
             }
-            
         }
-
     }
+
     /**
 	* Funcion para crear las 10 lianas del juego
 	*/
@@ -227,6 +217,7 @@ public class Juego
         this.lianas.add(liana9);
         this.lianas.add(liana10);
     }
+
      /**
 	* Funcion para obtener una liana de la lista
 	* @param ID de la liana que se esta buscando
@@ -235,7 +226,7 @@ public class Juego
     public Liana getLiana(Integer ID)
     {
         Liana temporal = null;
-        for(int i = 0; i< lianas.size();i++)
+        for(Integer i = 0; i< lianas.size();i++)
         {
             if(lianas.get(i).getId()==ID)
             {
@@ -243,12 +234,11 @@ public class Juego
             }
             else
             {
-                //System.out.println(lianas.get(i).getId());
             }
         }
-        //System.out.println(temporal.getId());
         return temporal;
     }
+
      /**
 	* Funcion para saber si el jugador ganó para sumarle los puntos, devolverlo a la posicion inicial y aumentar la velocidad de los enemigos
 	*/
@@ -259,8 +249,6 @@ public class Juego
             System.out.println("Won!");
             jugador.won();
             puntos = puntos + 1000;
-            //for(int i = 0; i< cocodrilos.size();i++)
-            //{
             if (cocodrilos.isEmpty())
             {
             }
@@ -269,11 +257,9 @@ public class Juego
                 cocodrilos.get(0).addVelocidad();
                 vel = cocodrilos.get(0).getVelocidad();
             }
-                
-            //}
-
         }
     }
+
     /**
 	* Función para obtener un string del juego
 	* @return un string con los puntos, las vidas, la posicion del jugador enemigos y frutas
@@ -287,6 +273,7 @@ public class Juego
         
         return vidas_str + ";"+ puntos_str + ";" + jugador_str + ";" + cocodrilos_str() + ";" + frutas_str();
     }
+
     /**
 	* Función para obtener un string con las posiciones de las frutas y eliminar en caso de colision con el jugador
 	* @return un string con las posiciones de las frutas existentes
@@ -300,11 +287,9 @@ public class Juego
         else
         {
             String finalStr ="";
-            for(int i = 0; i< frutas.size();i++)
+            for(Integer i = 0; i< frutas.size();i++)
             {
-                
                 //colision con jugador
-                //if(frutas.get(i).getPosicion().equals(jugador.getPosition()))
                 if(frutas.get(i).colision(jugador.getX(), jugador.getY()))
                 {
                     System.out.println("fruta eliminada");
@@ -312,7 +297,6 @@ public class Juego
                     String pos = frutas.get(i).getPosicion() + ":";
                     finalStr = finalStr + pos;
                     frutas.removeAt(i);
-
                 }
                 else
                 {
@@ -320,16 +304,11 @@ public class Juego
                     String pos = frutas.get(i).getPosicion() + ":";
                     finalStr = finalStr + pos;  
                 }
-                
-
             }
             return finalStr.substring(0,finalStr.length()-1);
-
-
         }
-
-
     }
+
     /**
 	* Función para obtener un string con las posiciones de los enemigos despues de moverlos y llamar a la funcion hit() de jugador en caso de colision
 	* @return un string con las posiciones de los enemigos existentes
@@ -343,22 +322,16 @@ public class Juego
         else
         {
             String finalStr ="";
-            for(int i = 0; i< cocodrilos.size();i++)
+            for(Integer i = 0; i< cocodrilos.size();i++)
             {
                 //colision con jugador
-                //String id = cocodrilos.get(i).getPosicion();
-                //String newPos = id.split(",")[1] + "," + id.split(",")[2];
-                //if(newPos.equals(jugador.getPosition()))
                 if(cocodrilos.get(i).colision(jugador.getX(), jugador.getY()))
                 {
                     jugador.hit();
                 }
-
-                //se slane de la pantalla
+                //se sale de la pantalla
                 if(cocodrilos.get(i).y>720)
                 {
-                    
-                    
                     System.out.println("coco murio");
                     
                     String pos = cocodrilos.get(i).getPosicion() + ":";
@@ -374,15 +347,8 @@ public class Juego
                     cocodrilos.get(i).move();
 
                 }
-                
-                    
-                
             }
             return finalStr.substring(0,finalStr.length()-1);
-
             }
-        
     }
-
-    
 }

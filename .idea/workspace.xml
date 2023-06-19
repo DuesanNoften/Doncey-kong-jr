@@ -10,22 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd2b2c15-a02e-4d56-9fef-873bf6b9d3ec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/Game/Azul.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/Game/Cocodrilo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/Game/Fruta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/Game/Juego.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/Game/Jugador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/Game/Liana.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/Game/Rojo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/ServerApp/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/ServerApp/ServerHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/ServerApp/ServerThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/img/fondo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/img/fondo2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/src/img/ico.png" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.idea/runConfigurations.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +34,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DonCEy-Kong-Jr-main_true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Doncey-kong-jr/Doncey-kong-jr/server"
+  }
+}]]></component>
   <component name="RunManager" selected="JAR Application.server.jar">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ServerApp.App" />
@@ -89,10 +81,22 @@
       <workItem from="1686823928238" duration="26000" />
       <workItem from="1686824005729" duration="78000" />
       <workItem from="1686824107694" duration="49000" />
+      <workItem from="1687154384763" duration="59000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

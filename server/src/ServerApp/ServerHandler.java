@@ -33,7 +33,7 @@ public class ServerHandler extends Thread {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
  
             System.out.println("Server is listening on port " + port);
- 
+
             while (count <= 3) {
                 Socket socket = serverSocket.accept();
                 System.out.println("New client connected to port "+port);

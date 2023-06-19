@@ -25,9 +25,10 @@ public abstract class Cocodrilo
         {
             return false;
         }
-        
     }
+
     public void move(){}
+
     /**
     * Función para cambiar el valor de velocidad
     * @param speed la velocidad a la que se quiere cambiar
@@ -36,6 +37,7 @@ public abstract class Cocodrilo
     {
         velocidad = speed;
     }
+
      /**
     * Función para aumentar el valor de velocidad en un valor de 5
     */
@@ -43,6 +45,7 @@ public abstract class Cocodrilo
     {
         velocidad = velocidad + 5;
     }
+
      /**
     * Función para obtener el valor de velocidad
     * @return velocidad
@@ -51,6 +54,7 @@ public abstract class Cocodrilo
     {
         return velocidad;
     }
+
     /**
     * Función para obtener el valor de la posicion del enemigo
     * @return posicion

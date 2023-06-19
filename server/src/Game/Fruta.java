@@ -20,8 +20,8 @@ public class Fruta
         this.x = x_position;
         this.y = y_position;
         this.posicion = x_position + "," + y_position;
-
     }
+
 	/**
 	* Función para detectar una colision entre el jugador y una fruta
 	* @param player_x posicion en x del jugador
@@ -38,8 +38,8 @@ public class Fruta
         {
             return false;
         }
-        
     }
+
     /**
     * Función para obtener el valor de la posicion del enemigo
     * @return posicion
@@ -48,6 +48,7 @@ public class Fruta
     {
         return posicion;
     }
+
     /**
     * Función para obtener el valor de los puntos de la fruta
     * @return puntos
@@ -56,6 +57,7 @@ public class Fruta
     {
         return puntos;
     }
+
     /**
     * Función para obtener el valor de la posicion de X
     * @return x
@@ -64,6 +66,7 @@ public class Fruta
     {
         return this.x;
     }
+
     /**
     * Función para obtener el valor de la posicion de y
     * @return y

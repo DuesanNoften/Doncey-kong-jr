@@ -29,6 +29,10 @@ public class App extends Canvas implements ActionListener {
     static JFrame frame;
     static JButton buttonJ1;
     static JButton buttonJ2;
+    static JButton addLife1;
+    static JButton addLife2;
+    static JButton removeLife1;
+    static JButton removeLife2;
     static JSlider sliderJ1;
     static JSlider sliderJ2;
     static JSpinner objJ1, optJ1, liaJ1;
@@ -63,27 +67,47 @@ public class App extends Canvas implements ActionListener {
     public static void main(String[] args) throws MalformedURLException, IOException {
        
         App app = App.getInstance();
-        ImageIcon icon = new ImageIcon("img/ico.png");
+        ImageIcon icon = new ImageIcon("src/img/ico.png");
         frame = new JFrame("DonCEy Kong Jr. Server");
         frame.setIconImage(icon.getImage());
         JLabel label = new JLabel("en liana");
         label.setFont(f);
-        label.setForeground(new Color(0, 0, 0));
+        label.setForeground(new Color(179, 207, 221));
 
         JLabel label2 = new JLabel("en liana");
         label2.setFont(f);
-        label2.setForeground(new Color(0, 0, 0));
+        label2.setForeground(new Color(179, 207, 221));
 
         buttonJ1 = new JButton("Enviar a J1");
-        buttonJ1.setBackground(new Color(179,207,221));
+        buttonJ1.setBackground(new Color(179, 207, 221));
         buttonJ1.setForeground(Color.BLACK);
+
+        addLife1=new JButton("1UP J1");
+        addLife1.setBackground(new Color(179, 207, 221));
+        addLife1.setForeground(Color.BLACK);
+
+        removeLife1=new JButton("-1UP J1");
+        removeLife1.setBackground(new Color(179, 207, 221));
+        removeLife1.setForeground(Color.BLACK);
 
         buttonJ2 = new JButton("Enviar a J2");
         buttonJ2.setBackground(new Color(179,207,221));
         buttonJ2.setForeground(Color.BLACK);
 
+        addLife2=new JButton("1UP J2");
+        addLife2.setBackground(new Color(179, 207, 221));
+        addLife2.setForeground(Color.BLACK);
+
+        removeLife2=new JButton("-1UP J2");
+        removeLife2.setBackground(new Color(179, 207, 221));
+        removeLife2.setForeground(Color.BLACK);
+
         buttonJ1.addActionListener(app);
+        addLife1.addActionListener(app);
+        removeLife1.addActionListener(app);
         buttonJ2.addActionListener(app);
+        addLife2.addActionListener(app);
+        removeLife2.addActionListener(app);
 
         sliderJ1 = new JSlider(JSlider.VERTICAL);
         sliderJ1.setBackground(Color.BLACK);
@@ -124,8 +148,8 @@ public class App extends Canvas implements ActionListener {
         setSpinnerProperties(liaJ2, 3);
 
         //JPanel panelJ1 = new JPanel();
-        ImagePanel panelJ1 = new ImagePanel(new ImageIcon("img/fondo.jpg").getImage());
-        panelJ1.setPreferredSize(new Dimension(1000, 350));
+        ImagePanel panelJ1 = new ImagePanel(new ImageIcon("src/img/fondo.jpg").getImage());
+        panelJ1.setPreferredSize(new Dimension(1000, 310));
         panelJ1.setBorder(BorderFactory.createEmptyBorder(40,40,40,40));
         panelJ1.add(optJ1);
         panelJ1.add(objJ1);
@@ -133,9 +157,11 @@ public class App extends Canvas implements ActionListener {
         panelJ1.add(liaJ1);
         panelJ1.add(sliderJ1);
         panelJ1.add(buttonJ1);
+        panelJ1.add(addLife1);
+        panelJ1.add(removeLife1);
 
-        ImagePanel panelJ2 = new ImagePanel(new ImageIcon("img/fondo2.jpg").getImage());
-        panelJ2.setPreferredSize(new Dimension(1000, 350));
+        ImagePanel panelJ2 = new ImagePanel(new ImageIcon("src/img/fondo2.jpg").getImage());
+        panelJ2.setPreferredSize(new Dimension(1000, 300));
         panelJ2.setBorder(BorderFactory.createEmptyBorder(40,40,40,40));
         panelJ2.add(optJ2);
         panelJ2.add(objJ2);
@@ -143,10 +169,12 @@ public class App extends Canvas implements ActionListener {
         panelJ2.add(liaJ2);
         panelJ2.add(sliderJ2);
         panelJ2.add(buttonJ2);
+        panelJ2.add(addLife2);
+        panelJ2.add(removeLife2);
 
         frame.add(panelJ1, BorderLayout.NORTH);
         frame.add(panelJ2, BorderLayout.CENTER);
-        frame.setPreferredSize(new Dimension(1000, 700));
+        frame.setPreferredSize(new Dimension(1000, 630));
         frame.pack();
         frame.setVisible(true);
 
@@ -184,6 +212,18 @@ public class App extends Canvas implements ActionListener {
         String objeto = "";
         String s = e.getActionCommand();
         Juego juego = new Juego();
+        if (s.equals("1UP J1")){
+            juego1.jugador.addlife();
+        }
+        if (s.equals("1UP J2")){
+            juego2.jugador.addlife();
+        }
+        if (s.equals("-1UP J1")){
+            juego1.jugador.takelife();
+        }
+        if (s.equals("-1UP J2")){
+            juego2.jugador.takelife();
+        }
         if (s.equals("Enviar a J1")) {
             x_liana = (Integer)liaJ1.getValue();
             y_percentage = sliderJ1.getValue();
@@ -198,13 +238,10 @@ public class App extends Canvas implements ActionListener {
             objeto = (String)objJ2.getValue();
             juego = juego2;
         }
-            
             if (opcion.equals("Crear")) {
                 if(objeto.equals("enemigo rojo")) {
                     System.out.println("creando enemigo rojo");
                     juego.crear_cocodrilo("1", x_liana, y_percentage);
-                    
-
                 }
                 if(objeto.equals("enemigo azul")) {
                     System.out.println("creando enemigo azul");
@@ -241,10 +278,10 @@ public class App extends Canvas implements ActionListener {
 }
 
 class ImagePanel extends JPanel {
-    private static final long serialVersionUID = 1L;
+    private static final Long serialVersionUID = 1L;
     private Image image = null;
-    private int iWidth2;
-    private int iHeight2;
+    private Integer iWidth2;
+    private Integer iHeight2;
 
     public ImagePanel(Image image) {
         this.image = image;

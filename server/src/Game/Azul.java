@@ -12,14 +12,13 @@ public class Azul extends Cocodrilo
     */
     public Azul(Integer x_position, Integer y_position, Integer[] liana_position)
     {
-        
         this.liana = liana_position;
         this.x = x_position;
         this.y = y_position;
         this.posicion = "2," + x_position + "," + y_position;
-
     }
-    /*
+
+    /**
     * Función para mover a un enemigo azul a lo largo de la liana
     */
     @Override

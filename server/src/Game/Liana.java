@@ -17,13 +17,12 @@ public class Liana
     */
     public Liana(Integer ID, Integer X, Integer y_Inicio, Integer y_Fin )
     {
-        
         this.x = X;
         this. y_inicio = y_Inicio;
         this. y_fin = y_Fin;
-
         this.id = ID;
     }
+
     /**
     * Función para obtener el ID de la liana
     * @return id
@@ -32,6 +31,7 @@ public class Liana
     {
         return id;
     }
+
     /**
     * Función para obtener el valor de la posicion de la liana
     * @return posicion [x, y_inicio, y_fin]

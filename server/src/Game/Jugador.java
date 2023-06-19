@@ -74,6 +74,15 @@ public class Jugador
         liana = 1;
         vidas--;
     }
+
+    public void addlife()
+    {
+        vidas++;
+    }
+
+    public void takelife(){
+        vidas--;
+    }
     /**
     * Función para devolver al jugador a la posicion inicial
     */

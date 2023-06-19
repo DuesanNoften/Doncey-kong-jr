@@ -12,15 +12,14 @@ public class Rojo extends Cocodrilo {
     */
     public Rojo(Integer x_position, Integer y_position, Integer[] liana_position)
     {
-        
         this.down = true;
         this.liana = liana_position;
         this.x = x_position;
         this.y = y_position;
         this.posicion = "1," + x_position + "," + y_position;
-
     }
-    /*
+
+    /**
     * Función para mover a un enemigo rojo a lo largo de la liana
     */
     @Override
@@ -42,9 +41,9 @@ public class Rojo extends Cocodrilo {
         {
             move_up();
         }
-        
     }
-    /*
+
+    /**
     * Función para mover a un enemigo rojo hacia arriba
     */
     private void move_down()
@@ -52,7 +51,8 @@ public class Rojo extends Cocodrilo {
         this.y = this.y + velocidad;
         this.posicion = "1," + this.x + "," + this.y;
     }
-    /*
+
+    /**
     * Función para mover a un enemigo rojo hacia abajo
     */
     private void move_up()
