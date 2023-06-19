@@ -202,7 +202,7 @@ public class App extends Canvas implements ActionListener {
 
         frame.add(panelJ1, BorderLayout.NORTH);
         frame.add(panelJ2, BorderLayout.CENTER);
-        frame.setPreferredSize(new Dimension(1400, 630));
+        frame.setPreferredSize(new Dimension(1400, 650));
         frame.pack();
         frame.setVisible(true);
 
@@ -211,6 +211,13 @@ public class App extends Canvas implements ActionListener {
 
         server1.start();
         server2.start();
+
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
 
     }
 
