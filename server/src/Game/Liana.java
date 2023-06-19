@@ -1,5 +1,5 @@
 package Game;
-/*
+/**
 * Clase para crear una Liana
 */
 public class Liana 

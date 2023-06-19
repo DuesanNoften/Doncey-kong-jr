@@ -19,25 +19,17 @@ public class ServerThread extends Thread {
     private Socket socket;
     private ServerHandler myHandler;
     private Boolean imPlayer;
- 
+
+    /**
+     * Constructor de la clase ServerThread
+     * @param socket puerto a utilizar
+     * @param myHandler nombre con el que sera tratado el Handler
+     */
     public ServerThread(Socket socket,ServerHandler myHandler) {
         this.socket = socket;
         this.myHandler = myHandler;
     }
 
-    public boolean testImput(String input){
-        if (input == null){
-            System.out.println("Null");
-            return false;
-        }
-        else{
-            if (input.equals("bye")){
-                return false;
-            }
-        }
-        return true;
-
-    }
  
     public void run() {
         try {

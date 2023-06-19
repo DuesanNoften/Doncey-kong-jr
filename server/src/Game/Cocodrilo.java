@@ -1,7 +1,8 @@
 package Game;
-/*
-* Clase padre Cocodrilo para crear enemigos a partir de las clases hijas Azul y Rojo
-*/
+
+/**
+ * Clase padre Cocodrilo para crear enemigos a partir de las clases hijas Azul y Rojo
+ */
 public abstract class Cocodrilo
 {
     static protected Integer velocidad;
@@ -27,6 +28,9 @@ public abstract class Cocodrilo
         }
     }
 
+    /**
+     * Estructura para el movimiento que heredan las subclases
+     */
     public void move(){}
 
     /**

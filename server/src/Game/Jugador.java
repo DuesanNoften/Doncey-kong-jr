@@ -1,5 +1,5 @@
 package Game;
-/*
+/**
 * Clase para crear un Jugador
 */
 public class Jugador 
@@ -75,11 +75,17 @@ public class Jugador
         vidas--;
     }
 
+    /**
+     * Metodo para añadir vidas al jugador
+     */
     public void addlife()
     {
         vidas++;
     }
 
+    /**
+     * Metodo para quitarle vidas al jugador
+     */
     public void takelife(){
         vidas--;
     }

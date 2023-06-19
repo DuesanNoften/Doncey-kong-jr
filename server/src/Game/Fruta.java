@@ -1,5 +1,5 @@
 package Game;
-/*
+/**
 * Clase para crear nuevas frutas en el juego
 */
 public class Fruta 

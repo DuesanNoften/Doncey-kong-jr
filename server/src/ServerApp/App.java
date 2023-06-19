@@ -58,6 +58,7 @@ public class App extends Canvas implements ActionListener {
     }
     /**
      * Clase para obtener la instancia de App
+     * @return La instancia unica que se tiene de la aplicación
      */
     public static App getInstance() {
         if(singleApp == null) {
@@ -65,8 +66,12 @@ public class App extends Canvas implements ActionListener {
         }
         return singleApp;
     }
+
     /**
-     * Main para crear la interfaz gráfica
+     * main utilizado para la ejecucion del programa
+     * @param args parametro necesario para el main
+     * @throws MalformedURLException Por si se llegase a generar un error al formar la URL
+     * @throws IOException por si se ingresase o obtuviese un valor erroneo
      */
     public static void main(String[] args) throws MalformedURLException, IOException {
 
@@ -212,6 +217,7 @@ public class App extends Canvas implements ActionListener {
         server1.start();
         server2.start();
 
+        //Revisar si se cierra la ventana, si ocurriese matar el programa
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -223,7 +229,7 @@ public class App extends Canvas implements ActionListener {
 
     /**
      * Funcion para configurar las propiedades de un spinner
-     * @param spinner
+     * @param spinner Objeto de la clase spinner de JFrame
      * @param width ancho del spinner
      */
     public static void setSpinnerProperties(JSpinner spinner, Integer width) {
@@ -233,7 +239,6 @@ public class App extends Canvas implements ActionListener {
         spinner.getEditor().getComponent(0).setBackground(Color.BLACK);
         spinner.getEditor().getComponent(0).setForeground(new Color(179,207,221));
     }
-    public void stateChanged(ChangeEvent e){}
 
     /**
      * Evento al presionar los botones de la interfaz, toma todos los datos de los componentes y realiza la acción respectiva
@@ -344,13 +349,20 @@ class ImagePanel extends JPanel {
     private Integer iWidth2;
     private Integer iHeight2;
 
+    /**
+     * Funcion que busca una imagen y toma su tamaño como parametro
+     * @param image Imagen que sera utilizada para el fondo
+     */
     public ImagePanel(Image image) {
         this.image = image;
         this.iWidth2 = image.getWidth(this)/2;
         this.iHeight2 = image.getHeight(this)/2;
     }
 
-
+    /**
+     * Funcion usada para colocar la imagen de fondo
+     * @param g the <code>Graphics</code> object to protect
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (image != null) {

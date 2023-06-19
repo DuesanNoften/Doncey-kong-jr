@@ -352,14 +352,24 @@ public class Juego
             }
     }
 
+    /**
+     * Metodo para agregarle 100 puntos al jugador
+     */
     public void addPoints(){
         puntos = puntos+100;
     }
 
+    /**
+     * Metodo para quitarle 100 puntos al jugador
+     */
     public void removePoints(){
         puntos = puntos-100;
     }
 
+    /**
+     * Metodo que devuelve los puntos que tiene actualmente el jugador
+     * @return puntos
+     */
     public Integer getPoints(){
         return this.puntos;
     }
