@@ -2,25 +2,25 @@ package Game;
 /*
 * Clase para crear una Liana
 */
-public class Liana 
+public class Vine
 {
     private Integer id;
     private Integer x;
-    private Integer y_inicio;
-    private Integer y_fin;
+    private Integer y_beginning;
+    private Integer y_end;
     /**
     * Constructor de Liana
     * @param ID id de la liana
     * @param X posición en x de la liana
-    * @param y_Inicio inicio de la liana en y
-    * @param y_Fin final de la liana en y
+    * @param y_beginning inicio de la liana en y
+    * @param y_end final de la liana en y
     */
-    public Liana(Integer ID, Integer X, Integer y_Inicio, Integer y_Fin )
+    public Vine(Integer ID, Integer X, Integer y_beginning, Integer y_end )
     {
         
         this.x = X;
-        this. y_inicio = y_Inicio;
-        this. y_fin = y_Fin;
+        this.y_beginning = y_beginning;
+        this.y_end = y_end;
 
         this.id = ID;
     }
@@ -40,8 +40,8 @@ public class Liana
     {
         Integer posicion[] = new Integer[3];
         posicion[0] = this.x;
-        posicion[1] = this.y_inicio;
-        posicion[2] = this.y_fin;
+        posicion[1] = this.y_beginning;
+        posicion[2] = this.y_end;
         return posicion;
     }
 

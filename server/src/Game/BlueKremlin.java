@@ -2,7 +2,7 @@ package Game;
 /**
 Clase hija de cocodrilo para crear enemigos azules
 */
-public class Azul extends Cocodrilo
+public class BlueKremlin extends Kremlin
 {
     /**
     * Constructor de Azul
@@ -10,13 +10,13 @@ public class Azul extends Cocodrilo
     * @param y_position posicion en y
     * @param liana_position datos de la liana
     */
-    public Azul(Integer x_position, Integer y_position, Integer[] liana_position)
+    public BlueKremlin(Integer x_position, Integer y_position, Integer[] liana_position)
     {
         
-        this.liana = liana_position;
+        this.vine = liana_position;
         this.x = x_position;
         this.y = y_position;
-        this.posicion = "2," + x_position + "," + y_position;
+        this.position = "2," + x_position + "," + y_position;
 
     }
     /*
@@ -25,8 +25,8 @@ public class Azul extends Cocodrilo
     @Override
     public void move()
     {
-        this.y = this.y + velocidad;
-        this.posicion = "2," + this.x + "," + this.y;
+        this.y = this.y + speed;
+        this.position = "2," + this.x + "," + this.y;
     }
     
 

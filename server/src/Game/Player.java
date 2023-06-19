@@ -2,23 +2,23 @@ package Game;
 /*
 * Clase para crear un Jugador
 */
-public class Jugador 
+public class Player
 {
-    private Integer vidas;
-    private String posicion;
-    public Integer liana;
+    private Integer lifes;
+    private String position;
+    public Integer vine;
     public Integer x;
     public Integer y;
     /**
 	* Constructor de Jugador
 	*/
-    public Jugador()
+    public Player()
     {
-        liana = 1;
-        vidas = 3;
+        vine = 1;
+        lifes = 3;
         x = 85;
         y = 585;
-        posicion = x + "," + y;
+        position = x + "," + y;
 
     }
     /**
@@ -44,7 +44,7 @@ public class Jugador
 	*/
     public void move_sideways(Integer X, Integer liana_nueva)
     {
-        liana = liana_nueva;
+        vine = liana_nueva;
         change_position(X, y);
     }
     /**
@@ -53,7 +53,7 @@ public class Jugador
 	* @param object_y posicion en y del objeto
 	* @return true si detecta una colision, false de lo contrario
 	*/
-    public Boolean colision(Integer object_x, Integer object_y)
+    public Boolean collision(Integer object_x, Integer object_y)
     {
         if((object_x == this.x) && (object_y == this.y))
         {
@@ -71,8 +71,8 @@ public class Jugador
     public void hit()
     {
         change_position(85, 585);
-        liana = 1;
-        vidas--;
+        vine = 1;
+        lifes--;
     }
     /**
     * Función para devolver al jugador a la posicion inicial
@@ -80,7 +80,7 @@ public class Jugador
     public void won()
     {
         change_position(85, 585);
-        liana = 1;
+        vine = 1;
 
     }
     /**
@@ -92,7 +92,7 @@ public class Jugador
     {
         this.x = X;
         this.y = Y;
-        this.posicion = x + "," + y;
+        this.position = x + "," + y;
 
     }
     /**
@@ -101,16 +101,16 @@ public class Jugador
     */
     public String getPosition()
     {
-        return this.posicion;
+        return this.position;
 
     }
     /**
     * Función para obtener las viddas del jugador
     * @return vidas
     */
-    public Integer getVidas()
+    public Integer getLifes()
     {
-        return this.vidas;
+        return this.lifes;
     }
     /**
     * Función para obtener el valor de la posicion de X

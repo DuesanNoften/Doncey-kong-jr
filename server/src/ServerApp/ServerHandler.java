@@ -9,7 +9,7 @@ import Game.*;
 */
 public class ServerHandler extends Thread {
     
-    public Juego miJuego;
+    public Game miJuego;
     public Boolean player;
     public Integer count;
     public Integer port;
@@ -19,7 +19,7 @@ public class ServerHandler extends Thread {
     * @param port puerto del cliente
     * @param miJuego juego del cliente
     */
-    public ServerHandler(Integer port, Juego miJuego) {
+    public ServerHandler(Integer port, Game miJuego) {
         this.port = port;
         this.miJuego = miJuego;
         this.player = false;

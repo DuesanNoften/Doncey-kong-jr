@@ -2,7 +2,7 @@ package Game;
 /*
 * Clase para crear nuevas frutas en el juego
 */
-public class Fruta 
+public class Fruit
 {
     private String posicion;
     private Integer x;
@@ -14,7 +14,7 @@ public class Fruta
     * @param x_position la posición en x
     * @param y_position la posicion en y
     */
-    public Fruta(Integer x_position, Integer y_position)
+    public Fruit(Integer x_position, Integer y_position)
     {
         this.puntos = 100;
         this.x = x_position;
@@ -44,7 +44,7 @@ public class Fruta
     * Función para obtener el valor de la posicion del enemigo
     * @return posicion
     */
-    public String getPosicion()
+    public String getPosition()
     {
         return posicion;
     }
@@ -52,7 +52,7 @@ public class Fruta
     * Función para obtener el valor de los puntos de la fruta
     * @return puntos
     */
-    public Integer getPuntos()
+    public Integer getPoints()
     {
         return puntos;
     }

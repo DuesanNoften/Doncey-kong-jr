@@ -2,11 +2,11 @@ package Game;
 /*
 * Clase padre Cocodrilo para crear enemigos a partir de las clases hijas Azul y Rojo
 */
-public abstract class Cocodrilo
+public abstract class Kremlin
 {
-    static protected Integer velocidad;
-    protected Integer[] liana;
-    protected String posicion;
+    static protected Integer speed;
+    protected Integer[] vine;
+    protected String position;
     protected Integer x;
     protected Integer y;
     /**
@@ -15,7 +15,7 @@ public abstract class Cocodrilo
     * @param player_y posicion en y del jugador
     * @return true si colisiona, false de lo contrario
     */
-    public Boolean colision(Integer player_x, Integer player_y)
+    public Boolean collision(Integer player_x, Integer player_y)
     {
         if((player_x == this.x) && (((this.y +20)> player_y) && ((this.y -20)< player_y)))
         {
@@ -32,31 +32,31 @@ public abstract class Cocodrilo
     * Función para cambiar el valor de velocidad
     * @param speed la velocidad a la que se quiere cambiar
     */
-    public void setVelocidad(Integer speed)
+    public void setSpeed(Integer speed)
     {
-        velocidad = speed;
+        Kremlin.speed = speed;
     }
      /**
     * Función para aumentar el valor de velocidad en un valor de 5
     */
-    public void addVelocidad()
+    public void addSpeed()
     {
-        velocidad = velocidad + 5;
+        speed = speed + 5;
     }
      /**
     * Función para obtener el valor de velocidad
     * @return velocidad
     */
-    public Integer getVelocidad()
+    public Integer getSpeed()
     {
-        return velocidad;
+        return speed;
     }
     /**
     * Función para obtener el valor de la posicion del enemigo
     * @return posicion
     */
-    public String getPosicion()
+    public String getPosition()
     {
-        return posicion;
+        return position;
     }
 }
