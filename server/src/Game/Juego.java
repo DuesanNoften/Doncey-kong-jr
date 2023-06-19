@@ -351,4 +351,16 @@ public class Juego
             return finalStr.substring(0,finalStr.length()-1);
             }
     }
+
+    public void addPoints(){
+        puntos = puntos+100;
+    }
+
+    public void removePoints(){
+        puntos = puntos-100;
+    }
+
+    public Integer getPoints(){
+        return this.puntos;
+    }
 }
